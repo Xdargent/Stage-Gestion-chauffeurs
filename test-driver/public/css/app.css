@@ -1948,3 +1948,79 @@ select {
   }
 }
 
+/*
+css test pour user
+*/
+.table_user {
+  border: 2px solid ;
+
+}
+
+table.table_user {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+    border-color: gray;
+	border-radius: 8px 8px 8px 8px;
+	
+}
+
+thead.table_user {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit
+}
+
+tbody.table_user {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+
+}
+
+tfoot.table_user {
+    display: table-footer-group;
+    vertical-align: middle;
+    border-color: inherit
+}
+
+tr.table_user {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit
+}
+
+td.table_user, th.table_user {
+    display: table-cell;
+    vertical-align: inherit;
+	padding: 5px 5px 3px 3px;
+}
+
+th.table_user {
+   font-weight: bold   
+}
+
+thead:first-child.table_user tr:first-child.table_user th:first-child.table_user, tbody:first-child.table_user tr:first-child.table_user td:first-child.table_user {
+    border-radius: 8px 0 0 0;
+}
+
+thead:first-child.table_user tr:first-child.table_user th:last-child.table_user, tbody:first-child.table_user tr:first-child.table_user td:last-child.table_user {
+    border-radius:0 8px 0 0;
+}
+
+thead:last-child.table_user tr:last-child.table_user th:first-child.table_user, tbody:last-child.table_user tr:last-child.table_user td:first-child.table_user {
+    border-radius: 0 0 0 8px;
+}
+
+thead:last-child.table_user tr:last-child.table_user th:last-child.table_user, tbody:last-child.table_user tr:last-child.table_user td:last-child.table_user {
+    border-radius: 0 0 8px 0;
+}
+
+td.table_modif:hover{
+    background-color: #11d2d2;
+}
+
+td.table_suppr:hover{
+    background-color: #ea2222;
+}
+

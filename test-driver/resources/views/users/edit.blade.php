@@ -40,7 +40,7 @@
 			<!-- S'il y a un $post->title, on complète la valeur de l'input -->
 			<input type="text" name="name" 		
 			value="{{ isset($user->name) ? $user->name : old('name') }}"
-			  id="name" placeholder="Le nom de la personne" >
+			  id="name" placeholder="Le nom de l'utilisateur" >
 
 			<!-- Le message d'erreur pour "name" -->
 			@error("name")
@@ -53,7 +53,7 @@
 			<input type="text" name="email"
 			
 			value="{{ isset($user->email) ? $user->email : old('email') }}"
-			  id="email" placeholder="L'email de la personne" >
+			  id="email" placeholder="L'email de l'utilisateur" >
 
 			<!-- Le message d'erreur pour "email" -->
 			@error("email")
@@ -66,7 +66,7 @@
 			<input type="text" name="role" 
 			
 			value="{{ isset($user->role) ? $user->role : old('role') }}"
-			  id="role" placeholder="Le role de la personne" >
+			  id="role" placeholder="Le role de l'utilisateur" >
 
 			<!-- Le message d'erreur pour "role" -->
 			@error("role")
@@ -79,7 +79,7 @@
 			<input type="text" name="telephone" 
 			
 			value="{{ isset($user->telephone) ? $user->telephone : old('telephone') }}"
-			  id="telephone" placeholder="Le telephone de la personne" >
+			  id="telephone" placeholder="Le telephone de l'utilisateur" >
 
 			<!-- Le message d'erreur pour "telephone" -->
 			@error("telephone")
@@ -92,7 +92,7 @@
 			<input type="text" name="cin" 
 			
 			value="{{ isset($user->cin) ? $user->cin : old('cin') }}"
-			  id="cin" placeholder="Le cin de la personne" >
+			  id="cin" placeholder="Le cin de l'utilisateur" >
 
 			<!-- Le message d'erreur pour "cin" -->
 			@error("cin")

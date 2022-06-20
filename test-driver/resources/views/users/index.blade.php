@@ -5,11 +5,6 @@
             <h2 class="text-xl font-semibold leading-tight">
                 {{ __('Liste des utilisateurs') }}
             </h2>
-            <x-button target="_blank" href="https://github.com/kamona-wd/kui-laravel-breeze" variant="black"
-                class="justify-center max-w-xs gap-2">
-                <x-icons.github class="w-6 h-6" aria-hidden="true" />
-                <span>Star on Github</span>
-            </x-button>
         </div>
     </x-slot>
 
@@ -20,33 +15,33 @@
 	</p>
 
 	<!-- Le tableau pour lister les articles/users -->
-	<table border="1" >
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Telephone</th>
-				<th>Role</th>
-				<th colspan="2" >Opérations</th>
+	<table border="1" class="table_user" >
+		<thead class="table_user">
+			<tr class="table_user"	>
+				<th class="table_user">Name</th>
+				<th class="table_user">Telephone</th>
+				<th class="table_user">Role</th>
+				<th colspan="2" class="table_user">Opérations</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="table_user">
 			<!-- On parcourt la collection de User -->
 			@foreach ($users as $user)
-			<tr>
-				<td>
+			<tr class="table_user">
+				<td class="table_user">
 					<p title="Lire l'article" >{{ $user->name  }}</p>
 				</td>
-				<td>
+				<td class="table_user">
 					<p title="Lire l'article" >{{ $user->telephone  }}</p>
 				</td>
-				<td>
+				<td class="table_user">
 					<p title="Lire l'article" >{{ $user->role  }}</p>
 				</td>
-				<td>
+				<td class="table_user table_modif">
 					<!-- Lien pour modifier un User : "users.edit" -->
 					<a href="{{ route('users.edit', $user) }}" title="Modifier l'article" >Modifier</a>
-				</td>
-				<td>
+				</td class="table_user">
+				<td class="table_user table_suppr">
 					<!-- Formulaire pour supprimer un User : "users.destroy" -->
 					<form method="POST" action="{{ route('users.destroy', $user) }}" >
 						<!-- CSRF token -->
@@ -56,7 +51,7 @@
 						<input type="submit" value=" Supprimer " >
 					</form>
 				</td>
-				<td>
+				<td class="table_user table_modif">
 					<!-- Lien pour modifier un User : "users.edit" -->
 					<a href={{ route('users.images', $user) }}> Voir Images</a>
 				</td>
