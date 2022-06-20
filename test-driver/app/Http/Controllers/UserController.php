@@ -189,16 +189,18 @@ $user= User::find($firstKey);
     {
         $input=$request->all();
         // dd($input);
-$firstKey = key($input);
-$image= Image_user::find($firstKey);
-// dd($image);
-$user_name=$image->user_id;
-// dd($user_name);
-$user= User::find($user_name);
-// dd($user);
-            unlink(public_path('user_images/'.$image->image));
-            $image->delete();
-    return redirect(route("users.images", $user));
+		$firstKey = key($input);
+		$image= Image_user::find($firstKey);
+		// dd($image);
+		$user_name=$image->user_id;
+		// dd($user_name);
+		$user= User::find($user_name);
+		// dd($user);
+		if(is_file(public_path('user_images/'.$image->image))){
+			unlink(public_path('user_images/'.$image->image) != null);
+		}
+		$image->delete();
+		return redirect(route("users.images", $user));
     // return view("users.images", compact("user"));
     }
     
