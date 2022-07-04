@@ -57,6 +57,7 @@ Route::group(['middleware'=> 'auth'],function () {
     Route::resource("bons", BonController::class);
     Route::get('/user-images',[UserController::class,'images'])->name('users.images');
     Route::get('/remove-image',[UserController::class,'removeImages'])->name('users.remove');
+	Route::get('/users-suppr',[UserController::class,'suppr'])->name('users.suppr');
     Route::post('/add-image',[UserController::class,'addImages'])->name('users.add');
     Route::resource("referants", RefController::class);
   });

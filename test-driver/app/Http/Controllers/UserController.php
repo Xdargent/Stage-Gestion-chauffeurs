@@ -173,16 +173,17 @@ class UserController extends Controller
     public function images(Request $request)
     {
 
-        $input=$request->all();
-$firstKey = key($input);
-$user= User::find($firstKey);
-    // dd($user->id);
-    if (!isset($user->images)) {
-    return view("users.images", compact("user"));
-    } else {
-    $images= $user->images;
-    return view("users.images", compact("user","images"));
-    }
+		$input=$request->all();
+		$firstKey = key($input);
+		$user= User::find($firstKey);
+		// dd($user->id);
+		if (!isset($user->images)) {
+			return view("users.images", compact("user"));
+		} 
+		else {
+			$images= $user->images;
+			return view("users.images", compact("user","images"));
+		}
     }
 
     public function removeImages(Request $request,User $user)
@@ -225,5 +226,21 @@ $user= User::find($firstKey);
         }
     return abort(404);
     // return view("users.index", compact("users"));
+    }
+	
+	/**
+     * rediriger vers la page suppr
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     **/
+    public function suppr(Request $request,User $user)
+    {
+	$input=$request->all();
+	$firstKey = key($input);
+	$user= User::find($firstKey);
+		
+    return view("users.suppr", compact("user"));
+        //
     }
 }

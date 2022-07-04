@@ -18,7 +18,7 @@
 	<table border="1" class="table_user" >
 		<thead class="table_user">
 			<tr class="table_user"	>
-				<th class="table_user">Name</th>
+				<th class="table_user">Nom</th>
 				<th class="table_user">Telephone</th>
 				<th class="table_user">Role</th>
 				<th colspan="2" class="table_user">Opérations</th>
@@ -42,14 +42,8 @@
 					<a href="{{ route('users.edit', $user) }}" title="Modifier l'article" >Modifier</a>
 				</td class="table_user">
 				<td class="table_user table_suppr">
-					<!-- Formulaire pour supprimer un User : "users.destroy" -->
-					<form method="POST" action="{{ route('users.destroy', $user) }}" >
-						<!-- CSRF token -->
-						@csrf
-						<!-- <input type="hidden" name="_method" value="DELETE"> -->
-						@method("DELETE")
-						<input type="submit" value=" Supprimer " >
-					</form>
+					<!-- Lien pour modifier un User : "users.edit" -->
+					<a href={{ route('users.suppr', $user) }}> Supprimer</a>
 				</td>
 				<td class="table_user table_modif">
 					<!-- Lien pour modifier un User : "users.edit" -->
